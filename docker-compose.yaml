@@ -7,8 +7,9 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD?err}
     volumes:
       - pg-data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
+    labels:
+      - coolify.type=database
+
 volumes:
   pg-data:
     name: my_postgis_volume
