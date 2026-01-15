@@ -2,14 +2,7 @@ services:
   pg:
     build:
       context: .
-    container_name: postgis-pgvector
     environment:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD?err}
     volumes:
       - pg-data:/var/lib/postgresql/data
-    labels:
-      - coolify.type=database
-
-volumes:
-  pg-data:
-    name: my_postgis_volume
